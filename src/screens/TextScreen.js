@@ -8,13 +8,14 @@ const TextScreen = () => {
         <View>
             <Text>Enter Name:</Text>
             <TextInput  
-                style={StyleSheet.input} 
+                style={styles.input} 
                 autoCapitalize="none"
                 autoCorrect={false}
                 value={name}
                 onChangeText={(newValue) => setName(newValue) }
             />
             <Text>My name is {name}</Text>
+            {name.length < 5 ? <Text>password must be 5 characters</Text> : null}
         </View>
     );
 }
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     input: {
         margin: 15 ,
         borderColor: 'black' ,
-        borderWidth: 1
+        borderWidth: 1 
     }
 });
 
